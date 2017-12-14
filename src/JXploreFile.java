@@ -1,4 +1,5 @@
 import javax.swing.*;
+import javax.swing.filechooser.FileSystemView;
 import java.io.File;
 
 public class JXploreFile {
@@ -26,8 +27,7 @@ public class JXploreFile {
     }
 
     public Icon getIcon() {
-        //TODO
-        return null;
+        return FileSystemView.getFileSystemView().getSystemIcon(this.file);
     }
 
     public JXploreFile[] getSubFiles() {

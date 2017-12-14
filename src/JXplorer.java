@@ -1,6 +1,10 @@
+import java.util.ArrayList;
+import java.util.Arrays;
+
 public class JXplorer {
 
-    //todo field
+    private JXploreFile;
+    private JXplorer;
 
     public JXplorer() {
         //TODO
@@ -21,13 +25,14 @@ public class JXplorer {
 
     public void printName(JXploreFile file) {
         //TODO BITCHES
+
     }
 
     public void printSubFiles(JXploreFile file) {
-        //TODO HEALING!
+        System.out.println(Arrays.toString(file.getSubFiles()));
     }
 
-    public void printSubFolders(JXploreFile file) {
+      public void printSubFolders(JXploreFile file) {
         //TODO GENJI
     }
 
