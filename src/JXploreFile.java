@@ -32,7 +32,16 @@ public class JXploreFile {
 
     public JXploreFile[] getSubFiles() {
         //TODO not tomoz
-        return null;
+        //Not sure this is 100% correct - John
+        JXploreFile[] subFiles = new JXploreFile[5];
+
+        subFiles[0] = new JXploreFile();
+        subFiles[1] = new JXploreFile();
+        subFiles[2] = new JXploreFile();
+        subFiles[3] = new JXploreFile();
+        subFiles[4] = new JXploreFile();
+
+        return subFiles;
     }
 
     public JXploreFile[] getSubFolders() {
