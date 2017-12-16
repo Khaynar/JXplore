@@ -1,6 +1,7 @@
 import javax.swing.*;
 import javax.swing.filechooser.FileSystemView;
 import java.io.File;
+import java.util.ArrayList;
 
 public class JXploreFile {
 
@@ -31,22 +32,28 @@ public class JXploreFile {
     }
 
     public JXploreFile[] getSubFiles() {
-        //TODO not tomoz
-        //Not sure this is 100% correct - John
-        JXploreFile[] subFiles = new JXploreFile[5];
+        File[] files = this.file.listFiles();
+        JXploreFile[] subFiles = new JXploreFile[files.length];
 
-        subFiles[0] = new JXploreFile();
-        subFiles[1] = new JXploreFile();
-        subFiles[2] = new JXploreFile();
-        subFiles[3] = new JXploreFile();
-        subFiles[4] = new JXploreFile();
+        for (int i = 0; i < files.length; i++) {
+            subFiles[i] = new JXploreFile(files[i]);
+        }
 
         return subFiles;
     }
 
     public JXploreFile[] getSubFolders() {
+        File[] files = this.file.listFiles();
+        ArrayList<JXploreFile> subFiles = new ArrayList<JXploreFile>();
+
+        for (int i = 0; i < files.length; i++) {
+            if (files[i].isDirectory()) {
+                subFiles.add(new JXploreFile(files[i]));
+            }
+        }
+
         //TODO not tomoz
-        return null;
+        return subFiles.toArray(new JXploreFile[subFiles.size()]);
     }
 
 }

@@ -24,15 +24,21 @@ public class JXplorer {
         System.out.println(file.getName());
     }
 
-    public void printSubFiles(JXploreFile file) {
-        System.out.println(Arrays.toString(file.getSubFiles()));
+    public void printSubFiles() {
+        JXploreFile[] subFiles = this.currentFile.getSubFiles();
+        for (int i = 0; i < subFiles.length; i++) {
+            System.out.println(subFiles[i].getName());
+        }
     }
 
-    public void printSubFolders(JXploreFile file) {
-        System.out.println(Arrays.toString(file.getSubFiles()));
+    public void printSubFolders() {
+        JXploreFile[] subFolders = this.currentFile.getSubFolders();
+        for (int i = 0; i < subFolders.length; i++) {
+            System.out.println(subFolders[i].getName());
+        }
     }
 
     public static void main(String[] args) {
-        new JXplorer();
+        new JXplorer().printSubFolders();
     }
 }
