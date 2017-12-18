@@ -27,6 +27,15 @@ public class JXploreFile {
         return this.file.getPath();
     }
 
+    public String getAbsolutePath() {
+        return this.file.getAbsolutePath();
+    }
+
+    public long getLastChanged() {
+        return this.file.lastModified();
+    }
+
+
     public Icon getIcon() {
         return FileSystemView.getFileSystemView().getSystemIcon(this.file);
     }
@@ -51,8 +60,6 @@ public class JXploreFile {
                 subFiles.add(new JXploreFile(files[i]));
             }
         }
-
-        //TODO not tomoz
         return subFiles.toArray(new JXploreFile[subFiles.size()]);
     }
 
